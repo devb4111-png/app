@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-gray-950 text-slate-gray-100 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-gray-500;
+  }
+
+  /* Selection colors */
+  ::selection {
+    @apply bg-electric-indigo-500/30 text-white;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-slate-gray-800/40 backdrop-blur-xl border border-slate-gray-700/30 rounded-2xl;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-electric-indigo-400 to-vivid-teal-400;
+  }
+
+  /* Subtle glow effect */
+  .glow-indigo {
+    box-shadow: 0 0 40px theme('colors.electric-indigo.500 / 0.15'),
+                0 0 80px theme('colors.electric-indigo.500 / 0.05');
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 40px theme('colors.vivid-teal.500 / 0.15'),
+                0 0 80px theme('colors.vivid-teal.500 / 0.05');
+  }
+}
+
+@layer utilities {
+  /* Line clamp */
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
